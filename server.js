@@ -1,7 +1,7 @@
 // Require http module
 const http = require('http')
 // Require fs module
-
+const fs = require('fs')
 // Require minimist module (make sure you install this one via npm).
 // Use minimist to process one argument `--port=` on the command line after `node server.js`.
 
@@ -18,10 +18,7 @@ const port = process.env.PORT || 3000
 // If there is an error, put it on the console error, return, and exit with error code 1. 
 // Do not be nice about exiting.
 
-
-
-
-
+    
 // Define a const `server` as an arrow function using http.createServer. 
 // Use the documentation for the node.js http module. 
 // The function should have three responses: 
@@ -31,7 +28,13 @@ const port = process.env.PORT || 3000
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html')
-    res.end('<h1>Temp text</h1>')
+    const data = fs.readFile('./www/index.html', 'utf8' , (err, data) => {
+        if (err) {
+            console.error(err)
+            process.exit(1);
+          }
+          res.end(data)
+        })
 })
 
 
