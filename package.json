@@ -1,0 +1,26 @@
+{
+  "name": "a01-fchiave",
+  "version": "1.0.0",
+  "description": "\"Simple web server\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fchiave: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@github.com/comp426-2022-spring/a01-fchiave.git"
+  },
+  "keywords": [
+    "web",
+    "server"
+  ],
+  "author": "Felipe Chiavegatto",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a01-fchiave/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a01-fchiave#readme",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}
