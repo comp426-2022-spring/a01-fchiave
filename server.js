@@ -18,7 +18,7 @@ const port = process.env.PORT || 3000
 // If there is an error, put it on the console error, return, and exit with error code 1. 
 // Do not be nice about exiting.
 
-    
+
 // Define a const `server` as an arrow function using http.createServer. 
 // Use the documentation for the node.js http module. 
 // The function should have three responses: 
@@ -29,13 +29,13 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html')
     // readFile is async , place in server callback to avoid sync errors
-    const data = fs.readFile('./www/index.html', 'utf8' , (err, data) => { 
+    const data = fs.readFile('./www/index.html', 'utf8', (err, data) => {
         if (err) {
             console.error(err)
             process.exit(1);
-          }
-          res.end(data)
-        })
+        }
+        res.end(data)
+    })
 })
 // Start the `server` const listening on the port defined by argument in your `port` const. 
 // Put the exact message `Server listening on port ${port}` on the console log. 
